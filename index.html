@@ -1,8 +1,8 @@
-<!-- This is my first website html code!!!  -->
+<!-- Time of day website  -->
 <!-- Developer: Stephen Secor -->
 <!-- Course:CIS4813-0001 -->
 <!-- Date: 05/13/25 -->
-<!-- Description: This is a basic HTML page for Assignment #1. -->
+<!-- Description: This website utilizes javascript and html to create a dynamic html webpage which responds to the time of day by changing its background color.  -->
 
 
 
@@ -20,6 +20,34 @@
 </head>
 <!-- The body contains everything on the webpage thats visible-->
 <body>
+  <!-- The script tag is used to include JavaScript code -->
+   <script>
+    // This function changes the background color based on the time of day
+    function changeBackgroundColor() {
+      const hour = new Date().getHours();
+      const body = document.body;
+
+      if (hour >=6 && hour < 12) {
+        body.style.backgroundColor = "lightblue"; // Morning
+      } else if (hour >=12 && hour < 18) {
+        body.style.backgroundColor = "lightyellow"; // Afternoon
+      } else if (hour >=18 && hour < 21) {
+        body.style.backgroundColor = "lightorange"; // Evening
+      } else {
+        body.style.backgroundColor = "lightgray"; // Evening
+      }
+    }
+
+    // Call the function to change the background color when the page loads
+    window.onload = changeBackgroundColor;
+
+
+
+
+
+
+
+
   <!-- The header contains the title of the webpage -->
   <header>
     <h1>Welcome to my first GitHub Webpage!</h1>
@@ -32,7 +60,7 @@
     <p>Major: Computer Science</p>
     <p>Date: 05/13/25</p>
     <p>Description: This is a basic HTML page for Assignment #1.</p>
-  </main>
+  </main>`
 
   <!-- The footer contains the copyright information -->
   <footer>
