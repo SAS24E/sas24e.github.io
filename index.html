@@ -1,8 +1,8 @@
 <!-- Time of day website  -->
 <!-- Developer: Stephen Secor -->
 <!-- Course:CIS4813-0001 -->
-<!-- Date: 05/13/25 -->
-<!-- Description: This website utilizes javascript and html to create a dynamic html webpage which responds to the time of day by changing its background color.  -->
+<!-- Date: 05/31/25 -->
+<!-- Description: This website utilizes javascript and html to create a dynamic html webpage which responds to the time of day by changing the uploaded image.  -->
 
 
 
@@ -16,15 +16,15 @@
   <!-- The viewport meta tag is used to control the layout on mobile browsers -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- The title tag is used to set the title of the page -->
-  <title>Dynamic Webpage</title>
+  <title><strong>Dynamic Webpage</strong></title>
 </head>
 <!-- The body contains everything on the webpage thats visible-->
 <body>
   <!-- The script tag is used to include JavaScript code -->
    <script>
-    // This function changes the background color based on the time of day
+    // This function changes the image based on the time of day
     function changeImageBasedOnTime() {
-      // The getHours() method returns the hour (0-23) of a date object
+      // The new Date() constructor creates a new date object with the current date and time
       const hour = new Date().getHours();
       // The document.body property returns the <body> element of the current document
       const image = document.getElementById("timeImage");
@@ -51,7 +51,7 @@
 
     // Call the function to change the background color when the page loads
   window.onload = changeImageBasedOnTime;
-  
+
 
 </script>
 
@@ -65,9 +65,8 @@
     <p>Course: CIS4813-0001</p>
     <p>Major: Computer Science</p>
     <p>Date: 05/19/25</p>
-    <p>Description: This webpage turns different colors based on the time of day!</p>
+    <p>Description: This webpage image changes based on the time of day!</p>
     <img id="timeImage" src="" alt="Time of Day" width="500">
-
 
   </main>
 
