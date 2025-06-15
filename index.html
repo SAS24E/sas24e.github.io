@@ -1,79 +1,47 @@
-<!-- Time of day website  -->
-<!-- Developer: Stephen Secor -->
-<!-- Course:CIS4813-0001 -->
-<!-- Date: 05/31/25 -->
-<!-- Description: This website utilizes javascript and html to create a dynamic html webpage which responds to the time of day by changing the uploaded image.  -->
-
-
 
 <!DOCTYPE html>
-<!-- The lang attribute in the html tag specifies the language of the document -->
 <html lang="en">
 <head>
-  <!-- The charset attribute in the meta tag specifies the character encoding for the document -->
   <meta charset="UTF-8">
-  <!-- The meta tag is used to set the character set and viewport for the page -->
-  <!-- The viewport meta tag is used to control the layout on mobile browsers -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- The title tag is used to set the title of the page -->
-  <title>Dynamic Webpage</title>
+  <title>Nested Menu Homepage</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
-<!-- The body contains everything on the webpage thats visible-->
 <body>
-  <!-- The script tag is used to include JavaScript code -->
-   <script>
-    // This function changes the image based on the time of day
-    function changeImageBasedOnTime() {
-      // The new Date() constructor creates a new date object with the current date and time
-      const hour = new Date().getHours();
-      // The document.body property returns the <body> element of the current document
-      const image = document.getElementById("timeImage");
-      
-      // Morning: 6 AM to 12 PM
-      // Afternoon: 12 PM to 6 PM
-      // Evening: 6 PM to 9 PM
-      // Night: 9 PM to 6 AM
-      // The image element is created to display the image based on the time of day
-      if (hour >=6 && hour < 12) {
-        image.src = "https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
-        image.alt = "Morning"; // Morning
-      } else if (hour >=12 && hour < 18) {
-        image.src = "https://plus.unsplash.com/premium_photo-1669377593274-41985c518d03?q=80&w=1852&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
-        image.alt = "Afternoon"; // Afternoon
-      } else if (hour >=18 && hour < 21) {
-        image.src = "https://plus.unsplash.com/premium_photo-1673697239909-e11521d1ba94?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
-        image.alt = "Evening"; // evening
-      } else {
-        image.src = "https://images.unsplash.com/photo-1488866022504-f2584929ca5f?q=80&w=1724&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
-        image.alt = "Night"; // Night
-      }
-    }
-
-    // Call the function to change the background color when the page loads
-  window.onload = changeImageBasedOnTime;
-
-
-</script>
-
-  <!-- The header contains the title of the webpage -->
   <header>
-    <h1>Welcome to my Dynamic Webpage!</h1>
+    <h1>Welcome to the Knowledge Portal</h1>
   </header>
-  <!-- The main contains the main content of the webpage -->
   <main>
-    <p><strong>Developer: </strong>Stephen Secor</p>
-    <p><strong>Course: </strong>CIS4813-0001</p>
-    <p><strong>Major: </strong>Computer Science</p>
-    <p><strong>Date: </strong>05/31/25</p>
-    <p><strong>Description: </strong>This webpage image changes based on the time of day!</p>
-    <img id="timeImage" src="" alt="Time of Day" width="500">
+    <p>Select a subject to explore topics:</p>
+    <ul class="menu">
+      <li onclick="toggleTopics('historyTopics')">History</li>
+      <ul id="historyTopics" class="hidden">
+        <li><a href="topic1.html">World War I</a></li>
+        <li><a href="topic2.html">World War II</a></li>
+        <li><a href="topic3.html">Renaissance</a></li>
+        <li><a href="topic4.html">Industrial Revolution</a></li>
+      </ul>
 
+      <li onclick="toggleTopics('scienceTopics')">Science</li>
+      <ul id="scienceTopics" class="hidden">
+        <li><a href="topic5.html">Biology</a></li>
+        <li><a href="topic6.html">Chemistry</a></li>
+        <li><a href="topic7.html">Physics</a></li>
+        <li><a href="topic8.html">Astronomy</a></li>
+      </ul>
+
+      <li onclick="toggleTopics('technologyTopics')">Technology</li>
+      <ul id="technologyTopics" class="hidden">
+        <li><a href="topic9.html">AI</a></li>
+        <li><a href="topic10.html">Internet</a></li>
+        <li><a href="topic11.html">Blockchain</a></li>
+        <li><a href="topic12.html">Space Tech</a></li>
+      </ul>
+    </ul>
   </main>
-
-  <!-- The footer contains the copyright information -->
   <footer>
     <p>&copy; 2025 Stephen Secor. All rights reserved.</p>
   </footer>
-  
 </body>
 </html>
